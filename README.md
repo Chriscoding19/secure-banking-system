@@ -1,10 +1,10 @@
-# 🏦 Secure Banking System
+# Secure Banking System
 
 A multi-threaded banking system implementing **Peterson's Algorithm** for mutual exclusion and lock mechanisms to guarantee thread safety.
 
 ---
 
-## 📐 Architecture
+## Architecture
 
 ```
 secure-banking/
@@ -26,7 +26,7 @@ secure-banking/
 
 ---
 
-## 🔐 Concurrency Mechanisms
+## Concurrency Mechanisms
 
 ### Peterson's Algorithm
 The core mutual exclusion primitive for two threads:
@@ -61,7 +61,7 @@ Transfers between accounts acquire locks in **consistent lexicographic order** b
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Option 1: Compile & Run Manually
 
@@ -79,7 +79,7 @@ mvn compile exec:java -Dexec.mainClass="banking.BankingSystemDemo"
 
 ---
 
-## 📋 Demo Scenarios
+## Demo Scenarios
 
 The demo runs 4 scenarios:
 
@@ -92,7 +92,7 @@ The demo runs 4 scenarios:
 
 ---
 
-## 🔑 Key Concepts
+## Key Concepts
 
 - **Critical Section**: The balance modification code that only one thread may execute at a time
 - **Race Condition**: Without locks, two threads reading the same balance simultaneously causes lost updates (e.g., two deposits of $100 result in only $100 total instead of $200)
@@ -101,13 +101,13 @@ The demo runs 4 scenarios:
 
 ---
 
-## 📊 Expected Output (Demo 2)
+## Expected Output (Demo 2)
 
 ```
 → 2 threads, 50 deposits of $10.00 each...
 Expected balance : $1000.00
 Actual balance   : $1000.00
-Peterson's mutex : ✅ PASSED — No race conditions!
+Peterson's mutex : PASSED — No race conditions!
 ```
 
 Without Peterson's lock, the expected vs actual balance would differ due to lost updates.
