@@ -36,7 +36,7 @@ public class BankingSystemDemo {
         demo3_ConcurrentTransfers();
         demo4_RaceConditionPrevention();
 
-        System.out.println("\n✅  All demos completed successfully.");
+        System.out.println("\n All demos completed successfully.");
     }
 
     // ─────────────────────────────────────────────────────────────
@@ -121,7 +121,7 @@ public class BankingSystemDemo {
         System.out.printf("  Expected balance : $%.2f%n", expectedFinal);
         System.out.printf("  Actual balance   : $%.2f%n", actual);
         System.out.println("  Peterson's mutex : " +
-            (expectedFinal.equals(actual) ? "✅ PASSED — No race conditions!" : "❌ FAILED — Race condition detected!"));
+            (expectedFinal.equals(actual) ? "PASSED — No race conditions!" : "FAILED — Race condition detected!"));
     }
 
     // ─────────────────────────────────────────────────────────────
@@ -176,7 +176,7 @@ public class BankingSystemDemo {
         System.out.printf("  Total before : $%.2f%n", totalBefore);
         System.out.printf("  Total after  : $%.2f%n", totalAfter);
         System.out.println("  Conservation : " +
-            (totalBefore.equals(totalAfter) ? "✅ PASSED — No money created or lost!" : "❌ FAILED"));
+            (totalBefore.equals(totalAfter) ? "PASSED — No money created or lost!" : "FAILED"));
 
         bankingService.printAllBalances();
     }
@@ -229,8 +229,8 @@ public class BankingSystemDemo {
         System.out.printf("  Final balance    : $%.2f%n", finalBalance);
         System.out.println("  Stress test      : " +
             (expectedBalance.equals(finalBalance)
-                ? "✅ PASSED — Peterson's lock maintained perfect consistency!"
-                : "❌ FAILED — Detected inconsistency: $" + finalBalance.subtract(expectedBalance)));
+                ? "PASSED — Peterson's lock maintained perfect consistency!"
+                : "FAILED — Detected inconsistency: $" + finalBalance.subtract(expectedBalance)));
     }
 
     // ─────────────────────────────────────────────────────────────
