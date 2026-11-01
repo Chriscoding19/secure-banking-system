@@ -51,10 +51,10 @@ flag[threadId] = false;  // "I'm done"
 |---|---|
 | **Mutual Exclusion** | Only one thread modifies the balance at a time |
 | **Progress** | If no thread is in the critical section, one will enter |
-| **Bounded Waiting** | No thread waits forever — starvation-free |
+| **Bounded Waiting** | No thread waits forever - starvation-free |
 
 ### Filter Lock (N-thread extension)
-Generalizes Peterson's to N threads using N-1 "waiting levels." Each level allows one thread through while keeping others waiting — a tournament-style algorithm.
+Generalizes Peterson's to N threads using N-1 "waiting levels." Each level allows one thread through while keeping others waiting - a tournament-style algorithm.
 
 ### Deadlock Prevention
 Transfers between accounts acquire locks in **consistent lexicographic order** by account ID, preventing circular wait (the necessary condition for deadlock).
@@ -86,9 +86,9 @@ The demo runs 4 scenarios:
 | Demo | What it shows |
 |---|---|
 | **Demo 1** | Basic deposit, withdrawal, overdraft protection |
-| **Demo 2** | 2 threads making 50 deposits each — Peterson's prevents lost updates |
-| **Demo 3** | Simultaneous bidirectional transfers — deadlock prevention |
-| **Demo 4** | Stress test: 200 interleaved deposit/withdraw pairs — balance stays consistent |
+| **Demo 2** | 2 threads making 50 deposits each - Peterson's prevents lost updates |
+| **Demo 3** | Simultaneous bidirectional transfers - deadlock prevention |
+| **Demo 4** | Stress test: 200 interleaved deposit/withdraw pairs - balance stays consistent |
 
 ---
 
@@ -96,8 +96,8 @@ The demo runs 4 scenarios:
 
 - **Critical Section**: The balance modification code that only one thread may execute at a time
 - **Race Condition**: Without locks, two threads reading the same balance simultaneously causes lost updates (e.g., two deposits of $100 result in only $100 total instead of $200)
-- **volatile**: Java keyword ensuring all threads see the most recent value of shared variables — required for Peterson's correctness under the Java Memory Model
-- **Busy-waiting (spin-lock)**: Peterson's loops until it's safe — acceptable for very short critical sections
+- **volatile**: Java keyword ensuring all threads see the most recent value of shared variables - required for Peterson's correctness under the Java Memory Model
+- **Busy-waiting (spin-lock)**: Peterson's loops until it's safe - acceptable for very short critical sections
 
 ---
 
