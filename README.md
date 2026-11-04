@@ -114,7 +114,7 @@ Without Peterson's lock, the expected vs actual balance would differ due to lost
 
 ---
 
-## 🛠 Technologies
+## Technologies
 
 - **Language**: Java 11+
 - **Concurrency**: Peterson's Algorithm, Filter Lock, `volatile`, `CountDownLatch`, `ExecutorService`
